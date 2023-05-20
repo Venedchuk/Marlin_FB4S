@@ -38,7 +38,7 @@ RN13_A4988_2208 - плата Robin Nano v1.3, 2 драйвра A4988, 2 драй
 RN13S           - плата Robin Nano-s 1.3
 */
 #ifndef AUTO_BUILD
-  #define PRINTER_DRV_TYPE RN11_ALL_2208
+  #define PRINTER_DRV_TYPE RN13S
 #endif
 
 #if PRINTER_DRV_TYPE == RN11_ALL_2208
@@ -130,11 +130,11 @@ RN13S           - плата Robin Nano-s 1.3
     #define USR_E0_DIR true
     #define USR_E0_TYPE TMC2209_STANDALONE
   #else
-    #define USR_E0_DIR false
+    #define USR_E0_DIR true
     #define USR_E0_TYPE TMC2208_STANDALONE
   #endif
   
-  #define USR_X_DIR true
+  #define USR_X_DIR false
   #define USR_X_TYPE TMC2208_STANDALONE
 
   #define USR_Y_DIR true
@@ -182,7 +182,7 @@ RN13S           - плата Robin Nano-s 1.3
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Sergey, FlyingbearGhost4S/5)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Venedchuk, FlyingbearGhost5)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -789,9 +789,9 @@ RN13S           - плата Robin Nano-s 1.3
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  17.04
-    #define DEFAULT_Ki   1.31
-    #define DEFAULT_Kd  55.34
+    #define DEFAULT_Kp  14.7
+    #define DEFAULT_Ki   0.66
+    #define DEFAULT_Kd  81.8
   #endif
 #endif
 
@@ -1289,7 +1289,7 @@ RN13S           - плата Robin Nano-s 1.3
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 400 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 160, 80, 400, 400 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
